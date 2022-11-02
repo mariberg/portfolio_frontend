@@ -21,6 +21,7 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
+    "@aws-cdk/aws-certificatemanager": "^1.179.0",
     "@aws-solutions-constructs/aws-cloudfront-s3": "^2.26.0",
     "aws-cdk-lib": "2.45.0",
     "constructs": "^10.0.0",
