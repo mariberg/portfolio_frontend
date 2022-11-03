@@ -18,7 +18,7 @@ jobs:
       - run: npm install -g aws-cdk
       - run: npm install aws-cdk-lib
       - run: cdk synth
-      - run: cdk deploy --require-approval never
+      - run: cdk deploy #--require-approval never
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
