@@ -140,6 +140,8 @@ ol li {
 }
 
 .btn-common {
+  display: flex;
+  justify-content: center;
   background-color: #00b4d9;
   position: relative;
   z-index: 1;
