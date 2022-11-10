@@ -1174,19 +1174,16 @@ a:not([href]):not([tabindex]):hover {
   font-family: courier;
 }
 
-/*! this doesn't work in mobile view*/
 .footer-right-area {
   position: absolute;
   bottom: 0px;
   right: 0px;
 }
 
-/*not working*/
 .contact-block div {
   border: #000;
 }
 
-/*not working*/
 #contact .col-md-6 {
   border: #000;
 }
@@ -1235,11 +1232,6 @@ a:not([href]):not([tabindex]):hover {
   padding-bottom: 20px;
 }
 
-/*
-#skills .section-padding {
-  background-color: #ffffff;
-}
-*/
 
 .overlay {
   display: flex;
