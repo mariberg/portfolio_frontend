@@ -4,10 +4,15 @@ This project has been created based on the [Cloud Resume Challenge](https://clou
 
 The backend for the project can be found in this [repo](https://github.com/mariberg/portfolio_backend). My deployed portfolio site is [here](https://marikabergman.com).
 
+This diagram explains the structure of the whole fullstack project:
+
+![Alt text](/img/diagram.png)
+
 
 ## Project structure
 
-The project has been deployed on AWS. The project consists of an AWS S3 bucket and CloudFront distribution. S3 bucket has a simple index.html-file, CSS-files and app.js, which has Javascript code that calls the api. The S3 bucket has not been configured as a website and cannot be access directly, only through the CloudFront distribution. 
+The project has been deployed on AWS. The project consists of an AWS S3 bucket and CloudFront distribution. S3 bucket has a simple index.html-file, CSS-files and app.js, which has Javascript code that calls the api. The S3 bucket has not been configured as a website and cannot be accessed directly, only through the CloudFront distribution. Amazon certificate manager has been used to create a certificate for my custom domain and to connect
+it to the CloudFront distribution.
 
 ## Deployment
 
