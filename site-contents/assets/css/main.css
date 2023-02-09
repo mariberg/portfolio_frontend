@@ -1265,3 +1265,11 @@ li::before {
 .class {
   overflow: hidden;
 }
+
+.jamk .jamk-list li {
+  padding: 0px;
+}
+
+.timeline .jamk-list li:before {
+  border-color: black;
+}
