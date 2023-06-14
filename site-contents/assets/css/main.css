@@ -142,6 +142,7 @@ ol li {
 .btn-common {
   display: flex;
   justify-content: center;
+  align-items: center; /* Add this line */
   background-color: #00b4d9;
   position: relative;
   z-index: 1;
@@ -1243,12 +1244,13 @@ li::before {
   margin-left: 10px;
 }
 
-/*for large screen only*/
+/*for large screen only
 @media screen and (min-width: 768px) {
   .icons .btn-common {
     margin-left: 5rem;
   }
 }
+*/
 
 .contact-box {
   border: 1px solid #00b4d9;
