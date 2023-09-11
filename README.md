@@ -1,8 +1,8 @@
-# Cloud Resume Challenge - Frontend for my portfolio site
+# Cloud Resume Challenge - Frontend for my portfolio website
 
 This project has been created based on the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), which gives a roadmap for creating a fullstack project with AWS, with plenty of opportunities for choosing your own path along the way.
 
-The backend for the project can be found in this [repo](https://github.com/mariberg/portfolio_backend). My deployed portfolio site is [here](https://marikabergman.com).
+The backend for the project can be found in this [repo](https://github.com/mariberg/portfolio_backend). My deployed portfolio website is [here](https://marikabergman.com).
 
 This diagram explains the structure of the whole fullstack project:
 
@@ -16,9 +16,9 @@ it to the CloudFront distribution.
 
 ## Deployment
 
-The project has been deployed as 'infrastructure as code' (IaC) and the tool that has been used for that is AWS CDK (Cloud development kit). The repo includes the CDK app source code. 
+The project has been deployed as 'infrastructure as code' (IaC) and the tool that has been used for that is AWS CDK (Cloud development kit). This repository includes the CDK app source code. 
 
 
 ## CI/CD
 
-Deployment has been automated with Github Actions workflow, which installs dependencies, configures AWS credentials with OIDC, deploys CDK app and runs Cypress tests.
+Deployment has been automated with Github Actions workflow, which installs dependencies, configures AWS credentials with OIDC, deploys the CDK app and runs Cypress tests.
