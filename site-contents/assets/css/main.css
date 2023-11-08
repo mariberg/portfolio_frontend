@@ -1275,3 +1275,7 @@ li::before {
 .timeline .jamk-list li:before {
   border-color: black;
 }
+
+.custom-margin {
+  margin-top: 20px; 
+}
