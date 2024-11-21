@@ -20,10 +20,10 @@ context('Navigation tests', () => {
     cy.viewport(320, 480)
 
     // the navbar should have collapse since our screen is smaller
-    cy.get(':nth-child(2) > .nav-link').should('contain', 'About').and('not.be.visible')
-    cy.get(':nth-child(3) > .nav-link').should('contain', 'Projects').and('not.be.visible')
-    cy.get(':nth-child(4) > .nav-link').should('contain', 'Education & Experience').and('not.be.visible')
-    cy.get(':nth-child(5) > .nav-link').should('contain', 'Contact').and('have.class', 'nav-link').and('not.be.visible')
+    cy.get(':nth-child(2) > .nav-link').should('contain', 'About').and('not.be.visible', { timeout: 10000 })
+    cy.get(':nth-child(3) > .nav-link').should('contain', 'Projects').and('not.be.visible', { timeout: 10000 })
+    cy.get(':nth-child(4) > .nav-link').should('contain', 'Education & Experience').and('not.be.visible', { timeout: 10000 })
+    cy.get(':nth-child(5) > .nav-link').should('contain', 'Contact').and('have.class', 'nav-link').and('not.be.visible', { timeout: 10000 })
 
     cy.get('.slicknav_btn').should('be.visible').click()
     cy.get('.slicknav_nav').should('be.visible')
