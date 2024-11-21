@@ -62,9 +62,6 @@
               <a class="nav-link" href="#resume"> Education & Experience </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#skills"> Skills </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#contact"> Contact </a>
             </li>
             <li class="nav-item">
@@ -87,9 +84,6 @@
         </li>
         <li>
           <a href="#resume">Education & Experience</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
         </li>
         <li>
           <a href="#contact">Contact</a>
@@ -151,7 +145,8 @@
               issues and crafting elegant solutions is what drives me. I'm also highly interested in cloud engineering
               and have solidified my practical experience with my three AWS certifications. </br>
               </br>
-              Please see below some of the things I have built and my resume.
+              Please see below some of the things I have built and my resume 
+              - and visit my blog to explore my technical writing and insights.
             </p>
           </div>
         </div>
@@ -205,27 +200,29 @@
           <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
             <div class="portfolio-item">
               <div class="shot-item">
-                <h3 class="line-title">Hackathon Project: Tazkeer</h3>
+                <h3 class="line-title">Hackathon Project: 911-Coach-AI</h3>
                 <p>
-                  Our team of four united in a hackathon endeavour, crafting a full-stack
-                  application based on our initial Figma design. With another developer, I
-                  co-built the NodeJS backend with a MongoDB database, tapping into an
-                  open API for data.
-                  As part of our backend development, I created a dynamic system that
-                  customizes a daily revision schedule for users. This scheduler
-                  prioritizes items the user marks as 'weak' while factoring in unrevised
-                  items and timestamps to optimize their revision strategy.
+                  During Medihacks 2024, our four-person team developed an AI-powered platform 
+                  designed to simulate 911 emergency medical call scenarios and provide instant, 
+                  evidence-based responses. Specifically, I led the backend development using 
+                  NodeJS and integrated frontend pages with AI API endpoints.
                 </p>
                 <p class="tech"><b>Frontend:</b> React </br>
                   <b>Backend:</b> NodeJS </br>
                   <b>Database:</b> MongoDB </br>
+                  <b>AI:</b> FastAPI, Pinecone, Cohere</br>
                 </p>
                 <div class="overlay">
                   <div class="icons">
-                    <a class="btn btn-common" href="https://github.com/Tech-Sisters/hackathon23-team2" role="button">
+                    <a class="btn btn-common"
+                      href="https://blog.marikabergman.com/ai-adventures-at-a-healthtech-hackathon-a-developers-perspective"
+                      role="button">My blog post</a>
+                    <a class="btn btn-common" href="https://github.com/adimidania/911-Coach-AI" role="button">
                       GitHub Repository</a>
                   </div>
                 </div>
+                <br />
+                <br />
                 <br />
               </div>
             </div>
@@ -307,37 +304,6 @@
             </div>
           </div>
 
-          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print custom-margin">
-            <div class="portfolio-item">
-              <div class="shot-item">
-                <h3 class="line-title">Hackathon Project: Wildife Companion</h3>
-                <p>
-                  During this Hackathon I collaborated with a UI designer, front-end
-                  developer
-                  and another developer who also implemented hardware design. Our teamwork spanned various time zones,
-                  with each member contributing asynchronously.
-                  My role encompassed creating a serverless AWS backend, which facilitated the flow of simulated data to
-                  our
-                  prototype application and which would be used to connect to the hardware in a potential production
-                  environment.
-                  I undertook the task of devising a scalable architecture and created architectural diagrams.
-                  Furthermore, I took charge of documentation and supported in integrating API calls with the frontend
-                  application.
-                </p>
-                <p class="tech"><b>Frontend:</b> React </br>
-                  <b>Backend:</b> AWS API Gateway, AWS Lambda </br>
-                </p>
-                <div class="overlay">
-                  <div class="icons">
-                    <a class="btn btn-common" href="https://github.com/mariberg/wildlife-companion" role="button">
-                      GitHub Repository</a>
-                    <a href="https://devpost.com/software/wildlife-companion" class="btn btn-common">Hackathon
-                      submission</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print custom-margin">
             <div class="portfolio-item">
@@ -345,27 +311,25 @@
                 <!--
                   <img src="assets/img/gallery/img-1.jpg" alt="" />
                   -->
-                <h3 class="line-title">Terraform Beginner Bootcamp</h3>
+                <h3 class="line-title">GitOps pipeline to deploy AWS infrastructure using Terraform</h3>
 
                 <p class="line-text">
-
-                  This bootcamp project utilized Terraform to provision AWS resources and Go code to
-                  create a Terraform custom provider. The journal in the GitHub repository contains
-                  a detailed description of the weekly progress.
+                  This project was created as part of GitOps for Terraform minicamp.
+                  The solution addresses the challenges by implementing automated code formatting to ensure 
+                  consistent coding standards, guardrails that restrict infrastructure deployment
+                  to predefine parameters and mandatory human approval workflow to control and validate
+                  infrastructure changes.
+                  A detailed diagram and further instructions are included in the repository.
                 </p>
-                <p class="tech"><b>Terraform custom provider:</b> Provider written in Go code and a Sinatra mock server
-                  </br>
-                  <b>'Terrahouse' resources:</b> These resources are created at 'Terratowns cloud' using the custom
-                  provider. <br />
-                  <b>AWS resources:</b> The AWS module contains two nested modules, one for
-                  creating a CloudFront distribution and invalidation and another for creating an S3 bucket. </br>
+                <p class="tech">
+                  <b>AWS:</b> AWS resources are created using Terraform. Terraform state is 
+                  stored remotely in an S3 bucket utilizing DynamoDB state lock <br />
+                  <b>CI/CD:</b>Pipeline is created with GitHub Actions. </br>
                 </p>
                 <div class="overlay">
                   <div class="icons">
-                    <a class="btn btn-common" href="https://github.com/mariberg/terraform-beginner-bootcamp-2023"
+                    <a class="btn btn-common" href="https://github.com/mariberg/gitops-2024"
                       role="button">GitHub repository</a>
-                    <a class="btn btn-common" href="https://github.com/mariberg/aws-bootcamp-cruddur-2023"
-                      role="button">Custom provider article on my blog</a>
                   </div>
                 </div>
 
@@ -391,7 +355,7 @@
           <div class="education wow fadeInRight" data-wow-delay="0.3s">
             <ul class="timeline">
               <li>
-                <i class="icon-graduation"></i>
+                <i class="icon-trophy"></i>
                 <h2 class="timelin-title">Certificates & Professional Development</h2>
               </li>
 
@@ -421,6 +385,31 @@
                   <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
                 </div>
               </li>
+              
+
+
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="experience wow fadeInRight" data-wow-delay="0.6s">
+            <ul class="timeline">
+              <li>
+                <i class="icon-graduation"></i>
+                <h2 class="timelin-title">Education</h2>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">
+                    Web Developer study module - JAMK University of Applied
+                    Sciences
+                  </h3>
+                  <p class="line-text">
+                    HTML/CSS, Javascript, Angular, SQL, NoSQL, NodeJS, practical
+                    assigment/fullstack project
+                  </p>
+                </div>
+              </li>
               <li>
                 <div class="content-text">
                   <h3 class="line-title">AWS Cloud Project Bootcamp / ExamPro Training Inc</h3>
@@ -441,76 +430,6 @@
                   </a>
                 </div>
               </li>
-
-
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <div class="experience wow fadeInRight" data-wow-delay="0.6s">
-            <ul class="timeline">
-              <li>
-                <i class="icon-briefcase"></i>
-                <h2 class="timelin-title">Experience</h2>
-              </li>
-              </br>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">
-                    Freelance Full Stack Developer
-                  </h3>
-                  <span>Nov 2022 --</span>
-                  <p class="line-text"></p>
-                </div>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">
-                    GE Healthcare Life Sciences - Order Fulfillment Coordinator
-                  </h3>
-                  <span>2010 - 2017</span>
-                  <p class="line-text">
-                    Coordinating all aspects of the order process, such as
-                    ensuring order validation, compliance and approvals and
-                    following shipments and installation to ensure revenue
-                    recognition on timely manner.
-                  </p>
-                  </br>
-                  <h3 class="line-title">
-                    * Project: Harmony - ERP integration *
-                  </h3>
-                  <span>2014 - 2015</span>
-                  <p class="line-text">
-                    Part of a team coordinating the integration of the Oracle ERP system and participating in
-                    cross-functional end-to-end testing.
-                    Testing Oracle settings, customizations and system stability as an order management super user.
-                    Troubleshooting and supporting order management/customer service users with technical challenges.
-
-                  </p>
-                </div>
-              </li>
-            </ul>
-            <ul class="timeline">
-              <li>
-                <i class="icon-graduation"></i>
-                <h2 class="timelin-title">Education</h2>
-              </li>
-              <li>
-                <div class="content-text">
-                  <h3 class="line-title">
-                    Web Developer study module - JAMK University of Applied
-                    Sciences
-                  </h3>
-                  <p class="line-text">
-                    The study module consists of the following courses: Basics
-                    of programming, data structures and algorithms, basics of
-                    web, tools for software development, relational databases,
-                    AWS services, NoSQL databases, frontend application
-                    development, mobile development using web technologies,
-                    NodeJS application development, practical assignment/fullstack project.
-                  </p>
-                </div>
-              </li>
               <li>
                 <div class="content-text">
                   <h3 class="line-title">
@@ -522,6 +441,86 @@
                   </p>
                 </div>
               </li>
+            </ul>
+          </br>
+        </br>
+        <!--TODO create skills class and copy other styles from timeline, but put less padding-->
+        <ul class="skills">
+          <li>
+            <i class="icon-rocket"></i>
+                <h2 class="checklist-title">Skills</h2>
+              </li>
+              
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Javascript, Typescript</p>
+                  </div>
+                </li>
+              
+              
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">AWS</p>
+                  </div>
+                </li>
+              
+            
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">NodeJS</p>
+                  </div>
+                </li>
+              
+              
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Terraform</p>
+                  </div>
+                </li>
+              
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">MongoDB</p>
+                  </div>
+                </li>
+              
+              
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">SQL</p>
+                  </div>
+                </li>
+              
+              
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">ReactJS</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Docker</p>
+                  </div>
+                </li>
+              
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">GIT</p>
+                  </div>
+                </li>
+        
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">HTML/CSS</p>
+                  </div>
+                </li>
+        
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Cypress</p>
+                  </div>
+                </li>
+              
             </ul>
           </div>
         </div>
@@ -539,90 +538,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="education wow fadeInRight" data-wow-delay="0.3s">
-            <ul class="check-list">
-              <li>
-                <h2 class="checklist-title">Skills</h2>
-              </li>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">Javascript, Typescript</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">AWS</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">NodeJS</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">Terraform</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">MongoDB</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">SQL</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">ReactJS</p>
-                  </div>
-                </li>
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">Docker</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">GIT</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">HTML/CSS</p>
-                  </div>
-                </li>
-              </div>
-              <div class="checklist-item">
-                <li>
-                  <div class="content-text">
-                    <p class="line-title">Cypress</p>
-                  </div>
-                </li>
-              </div>
-            </ul>
+            
           </div>
         </div>
 
@@ -651,7 +567,6 @@
           </div>
         </div>
   </section>
-  <!-- Resume Section End -->
 
 
   <!-- Footer Section Start -->
