@@ -6,7 +6,7 @@ import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as s3deploy from 'aws-cdk-lib/aws-s3-deployment'; 
 import * as cloudfront_origins from 'aws-cdk-lib/aws-cloudfront-origins'; 
 import * as iam from 'aws-cdk-lib/aws-iam';
-import { Duration, Stack, StackProps } from 'aws-cdk-lib';
+import { Duration } from 'aws-cdk-lib';
 import * as path from "path";
 
 export class PortfolioFrontendStack extends cdk.Stack {
