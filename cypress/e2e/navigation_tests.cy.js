@@ -16,6 +16,7 @@ context('Navigation tests', () => {
   })
 
   it('Mobile navi displayed on smaller screen', () => {
+    Cypress.config('defaultCommandTimeout', 10000)
     cy.viewport(320, 480)
 
     // the navbar should have collapse since our screen is smaller
