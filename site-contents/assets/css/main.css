@@ -1361,17 +1361,22 @@ li::before {
 }
 
 .image-description-container {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Vertically align items in the center */
+  background-color: #f0f0f0; /* Example grey background */
+  padding: 10px; /* Add some padding for visual appeal */
 }
 
-.image-description-container img {
+.image-content { /*new div for image and paragraph*/
+  display: flex;
+  text-align: left; /* Align text to the left */
+}
+
+.image-content img {
   width: 150px;
   height: 150px;
   object-fit: cover;
-  margin-right: 10px; /* Add some space between the image and text */
+  margin-right: 10px; /* Add space between image and text */
 }
 
-.image-description-container p {
-  margin: 0; /* Remove default paragraph margins */
+.image-content p {
+  margin: 0;
 }
