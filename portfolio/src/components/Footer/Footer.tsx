@@ -21,7 +21,7 @@ function Footer() {
   return (
     <footer className="footer">
       <p className="footer-text">
-        Marika Bergman · © 2026 · {visitorCount !== null ? visitorCount : '...'} visitors
+        Marika Bergman · © 2026
       </p>
       <p className="footer-challenge">
         This site was built as part of the{' '}
