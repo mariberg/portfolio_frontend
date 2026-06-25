@@ -1,5 +1,11 @@
 # Cloud Resume Challenge - Frontend for my portfolio website
 
+--------------------------------------------------------------------------------------------
+
+UPDATE June 2026 - the original html website has been replaced with a React app (tech stack React, Vite, TypeScript). The below documentation has been kept as part of the documentation for original project history.
+
+--------------------------------------------------------------------------------------------
+
 This project has been created based on the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), which gives a roadmap for creating a fullstack project with AWS, with plenty of opportunities for choosing your own path along the way.
 
 The backend for the project can be found in this [repo](https://github.com/mariberg/portfolio_backend). My deployed portfolio website is [here](https://marikabergman.com).
