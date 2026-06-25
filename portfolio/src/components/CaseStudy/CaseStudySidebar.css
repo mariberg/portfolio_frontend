@@ -1,0 +1,153 @@
+.cs-sidebar {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cs-sidebar-title {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--pink);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* Tech stack — desktop vertical list */
+.cs-stack-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-stack-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cs-stack-item:last-child {
+  border-bottom: none;
+}
+
+.cs-stack-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+.cs-stack-name {
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.cs-stack-role {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+/* Tech stack — mobile chips */
+.cs-stack-chips {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.cs-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.72rem;
+  color: var(--text);
+}
+
+.cs-chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+.cs-chip-role {
+  font-size: 0.62rem;
+  color: var(--muted);
+  margin-left: 0.1rem;
+}
+
+/* Links */
+.cs-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cs-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cs-link:hover {
+  opacity: 0.85;
+}
+
+.cs-link-primary {
+  background: var(--green);
+  color: #fff;
+}
+
+.cs-link-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* Reflection */
+.cs-learnings {
+  background: rgba(214, 77, 122, 0.05);
+  border: 1px solid rgba(214, 77, 122, 0.15);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.cs-learnings p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .cs-sidebar {
+    padding: 0;
+    gap: 0;
+  }
+
+  .cs-sidebar-block {
+    padding: 1.2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cs-stack-list {
+    display: none;
+  }
+
+  .cs-stack-chips {
+    display: flex;
+  }
+}

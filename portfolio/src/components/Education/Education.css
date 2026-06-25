@@ -1,0 +1,36 @@
+.education-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.education-label {
+  font-family: 'Caveat', cursive;
+  color: var(--pink);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .education-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .education-list {
+    gap: 1rem;
+  }
+}

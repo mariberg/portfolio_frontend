@@ -1,0 +1,41 @@
+.cs-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background: rgba(9, 15, 13, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cs-nav-logo {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  color: var(--green-light);
+  text-decoration: none;
+}
+
+.cs-back {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.cs-back:hover {
+  color: var(--green-light);
+}
+
+@media (max-width: 768px) {
+  .cs-nav {
+    padding: 0.8rem 1.2rem;
+  }
+}

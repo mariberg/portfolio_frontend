@@ -1,0 +1,125 @@
+.cs-hero {
+  padding: 3.5rem 2.5rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(214, 77, 122, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cs-number {
+  font-family: 'Caveat', cursive;
+  font-size: 5rem;
+  color: var(--border);
+  line-height: 1;
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-weight: 700;
+}
+
+.cs-label {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--pink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.cs-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  max-width: 520px;
+}
+
+.cs-meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cs-meta-key {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.cs-meta-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cs-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  background: rgba(45, 158, 126, 0.1);
+  border: 1px solid rgba(45, 158, 126, 0.2);
+  color: var(--green-light);
+}
+
+.cs-tag-pink {
+  background: rgba(214, 77, 122, 0.08);
+  border-color: rgba(214, 77, 122, 0.2);
+  color: var(--pink-light);
+}
+
+@media (max-width: 768px) {
+  .cs-hero {
+    padding: 1.5rem 1.2rem 1.2rem;
+  }
+
+  .cs-number {
+    font-size: 3.5rem;
+    top: 1rem;
+    right: 1.2rem;
+  }
+
+  .cs-title {
+    font-size: 1.5rem;
+    max-width: 230px;
+  }
+
+  .cs-meta {
+    gap: 1.2rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .cs-tags {
+    gap: 0.35rem;
+  }
+
+  .cs-tag {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.55rem;
+  }
+}

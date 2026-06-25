@@ -1,0 +1,38 @@
+.certifications-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certifications-label {
+  font-family: 'Caveat', cursive;
+  color: var(--pink);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.certifications-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  line-height: normal;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .certifications-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

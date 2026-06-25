@@ -1,0 +1,58 @@
+.cert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s;
+}
+
+.cert-item:hover {
+  border-color: var(--green-dark);
+}
+
+.cert-item--community {
+  grid-column: 1 / -1;
+  border-color: var(--pink);
+  background: rgba(214, 77, 122, 0.04);
+}
+
+.cert-item--special {
+  border-color: var(--green-dark);
+  background: rgba(45, 158, 126, 0.05);
+}
+
+.cert-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(45, 158, 126, 0.15);
+  border: 1px solid var(--green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.cert-icon--pink {
+  background: rgba(214, 77, 122, 0.1);
+  border-color: var(--pink);
+}
+
+.cert-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.cert-meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+}

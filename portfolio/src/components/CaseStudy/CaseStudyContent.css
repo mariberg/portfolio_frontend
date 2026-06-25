@@ -1,0 +1,11 @@
+.cs-body {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 0;
+}
+
+@media (max-width: 768px) {
+  .cs-body {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,51 @@
+.cs-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.cs-nav-item {
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.cs-nav-item:hover {
+  opacity: 0.8;
+}
+
+.cs-nav-item-right {
+  text-align: right;
+}
+
+.cs-nav-dir {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.cs-nav-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .cs-footer-nav {
+    padding: 1rem 1.2rem;
+  }
+
+  .cs-nav-dir {
+    font-size: 0.62rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .cs-nav-title {
+    font-size: 0.75rem;
+  }
+}

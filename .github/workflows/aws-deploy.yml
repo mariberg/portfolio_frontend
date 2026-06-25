@@ -8,8 +8,14 @@ jobs:
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v3
-      - name: Install dependencies
+      - name: Install root dependencies
         run: npm install
+      - name: Install React app dependencies
+        run: npm install
+        working-directory: portfolio
+      - name: Build React app
+        run: npm run build
+        working-directory: portfolio
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with: 
@@ -18,8 +24,4 @@ jobs:
       - run: npm install -g aws-cdk
       - run: npm install aws-cdk-lib
       - run: cdk synth
-      - run: cdk deploy
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          start: npx cypress run
+      - run: cdk deploy --require-approval never

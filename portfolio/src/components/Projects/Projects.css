@@ -1,0 +1,37 @@
+.projects-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-label {
+  font-family: 'Caveat', cursive;
+  color: var(--pink);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}

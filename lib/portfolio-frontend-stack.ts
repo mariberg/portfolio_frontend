@@ -63,7 +63,7 @@ export class PortfolioFrontendStack extends cdk.Stack {
 
     new s3deploy.BucketDeployment(this, 'DeployWebsite', {
       sources: [
-        s3deploy.Source.asset(path.resolve(__dirname, '../site-contents'))
+        s3deploy.Source.asset(path.resolve(__dirname, '../portfolio/dist'))
     ],
       destinationBucket: portfolioBucket,
       distribution, // files in the distribution's edge caches will be invalidated after files are uploaded to the destination bucket

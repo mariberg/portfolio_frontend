@@ -1,0 +1,139 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  background: rgba(9, 15, 13, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  color: var(--green-light);
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--green-light);
+}
+
+.nav-cta {
+  background: transparent;
+  border: 1px solid var(--pink);
+  color: var(--pink-light);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-cta:hover {
+  background: rgba(214, 77, 122, 0.1);
+}
+
+/* Hamburger button — hidden by default */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--muted);
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.nav-hamburger span:last-child {
+  width: 60%;
+}
+
+.nav-hamburger:hover span {
+  background: var(--green-light);
+}
+
+/* Mobile overlay */
+.nav-mobile-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.nav-mobile-overlay li a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-mobile-overlay li a:hover {
+  color: var(--green-light);
+  background: rgba(78, 205, 196, 0.05);
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}

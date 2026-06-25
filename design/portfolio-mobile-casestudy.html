@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Mobile & Case Study Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #090f0d;
+    --surface:     #101a15;
+    --surface2:    #162019;
+    --green-dark:  #1e6e54;
+    --green:       #2d9e7e;
+    --green-light: #4ecdc4;
+    --mint:        #a8e6da;
+    --pink:        #d64d7a;
+    --pink-light:  #e87da0;
+    --text:        #dff0eb;
+    --muted:       #6b9080;
+    --border:      #1e3028;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    font-family: 'DM Sans', sans-serif;
+    color: #ccc;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  h1.page-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  /* ─── LAYOUT: TWO COLUMNS ─── */
+  .layout {
+    display: grid;
+    grid-template-columns: 390px 1fr;
+    gap: 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  /* ─── COLUMN LABELS ─── */
+  .col-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--green-light);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* ═══════════════════════════════
+     MOBILE PHONE FRAME
+  ═══════════════════════════════ */
+  .phone-frame {
+    width: 390px;
+    background: #0a0a0a;
+    border-radius: 48px;
+    border: 8px solid #222;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6), inset 0 0 0 1px #333;
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-notch {
+    width: 120px;
+    height: 30px;
+    background: #0a0a0a;
+    border-radius: 0 0 20px 20px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    border: 2px solid #222;
+    border-top: none;
+  }
+  .phone-screen {
+    background: var(--bg);
+    overflow-y: auto;
+    max-height: 780px;
+    scrollbar-width: none;
+  }
+  .phone-screen::-webkit-scrollbar { display: none; }
+
+  /* Mobile Nav */
+  .m-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    background: rgba(9,15,13,0.95);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .m-nav-logo {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--green-light);
+  }
+  .m-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+  .m-hamburger span {
+    width: 22px;
+    height: 2px;
+    background: var(--muted);
+    border-radius: 2px;
+  }
+  .m-hamburger span:last-child { width: 14px; }
+
+  /* Mobile Hero */
+  .m-hero {
+    padding: 2rem 1.4rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .m-hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(45,158,126,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .m-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--green);
+    margin-bottom: 0.3rem;
+  }
+  .m-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+  }
+  .m-name span { color: var(--green-light); }
+  .m-tagline {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+  .m-tagline strong { color: var(--mint); font-weight: 500; }
+  .m-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .m-badge {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    background: rgba(45,158,126,0.1);
+    border: 1px solid var(--green-dark);
+    color: var(--green-light);
+  }
+  .m-btns {
+    display: flex;
+    gap: 0.7rem;
+  }
+  .m-btn-primary {
+    background: var(--green);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: none;
+    flex: 1;
+    text-align: center;
+  }
+  .m-btn-ghost {
+    background: transparent;
+    color: var(--pink-light);
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--pink);
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Mobile Diagram */
+  .m-diagram {
+    padding: 0 1.4rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .m-diagram svg {
+    width: 100%;
+    height: auto;
+    opacity: 0.88;
+  }
+
+  /* Mobile Section */
+  .m-section {
+    padding: 1.5rem 1.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .m-section-label {
+    font-family: 'Caveat', cursive;
+    font-size: 0.85rem;
+    color: var(--pink);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .m-section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+  }
+
+  /* Mobile Project Cards */
+  .m-project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .m-project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--green);
+  }
+  .m-project-card:nth-child(2)::before { background: var(--green-light); }
+  .m-project-card:nth-child(3)::before { background: var(--pink); }
+  .m-project-num {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .m-project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .m-project-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 0.7rem;
+  }
+  .m-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.7rem;
+  }
+  .m-tag {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    background: rgba(45,158,126,0.1);
+    border: 1px solid rgba(45,158,126,0.2);
+    color: var(--green-light);
+  }
+  .m-tag-pink {
+    background: rgba(214,77,122,0.08);
+    border-color: rgba(214,77,122,0.2);
+    color: var(--pink-light);
+  }
+  .m-project-link {
+    font-size: 0.75rem;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  /* Mobile Certs */
+  .m-cert {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 0.6rem;
+  }
+  .m-cert.special { border-color: var(--green-dark); background: rgba(45,158,126,0.05); }
+  .m-cert.community { border-color: var(--pink); background: rgba(214,77,122,0.04); }
+  .m-cert-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(45,158,126,0.15);
+    border: 1px solid var(--green-dark);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    color: var(--green-light);
+  }
+  .m-cert-icon.pink { background: rgba(214,77,122,0.1); border-color: var(--pink); color: var(--pink-light); }
+  .m-cert-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.15rem;
+  }
+  .m-cert-meta { font-size: 0.68rem; color: var(--muted); }
+
+  /* Mobile Education */
+  .m-edu {
+    padding: 0.9rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 0.6rem;
+  }
+  .m-edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+  .m-edu-school { font-size: 0.72rem; color: var(--muted); }
+
+  /* Mobile Contact */
+  .m-contact {
+    padding: 2rem 1.4rem;
+    text-align: center;
+    background: var(--surface);
+  }
+  .m-contact-label {
+    font-family: 'Caveat', cursive;
+    font-size: 0.85rem;
+    color: var(--pink);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .m-contact-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .m-contact-sub { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+  .m-contact-email {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--green-light);
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .m-social { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+  .m-social-link {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    background: var(--surface2);
+  }
+
+  /* Mobile Footer */
+  .m-footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    font-family: 'Caveat', cursive;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+
+  /* ═══════════════════════════════
+     CASE STUDY PAGE
+  ═══════════════════════════════ */
+  .casestudy-col { flex: 1; }
+
+  .casestudy-frame {
+    background: var(--bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+
+  /* CS Nav */
+  .cs-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: rgba(9,15,13,0.95);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+  }
+  .cs-nav-logo {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--green-light);
+  }
+  .cs-back {
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+  }
+  .cs-back:hover { color: var(--green-light); }
+
+  /* CS Hero */
+  .cs-hero {
+    padding: 3.5rem 2.5rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(214,77,122,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cs-number {
+    font-family: 'Caveat', cursive;
+    font-size: 5rem;
+    color: var(--border);
+    line-height: 1;
+    position: absolute;
+    top: 2rem; right: 2.5rem;
+    font-weight: 700;
+  }
+  .cs-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--pink);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .cs-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    max-width: 520px;
+  }
+  .cs-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .cs-meta-item { }
+  .cs-meta-key {
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+  }
+  .cs-meta-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .cs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .cs-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    background: rgba(45,158,126,0.1);
+    border: 1px solid rgba(45,158,126,0.2);
+    color: var(--green-light);
+  }
+  .cs-tag-pink {
+    background: rgba(214,77,122,0.08);
+    border-color: rgba(214,77,122,0.2);
+    color: var(--pink-light);
+  }
+
+  /* CS Body */
+  .cs-body {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 0;
+  }
+
+  .cs-main {
+    padding: 2.5rem 2.5rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .cs-section {
+    margin-bottom: 2.5rem;
+  }
+  .cs-section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: var(--green);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cs-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .cs-text {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .cs-text strong { color: var(--mint); font-weight: 500; }
+
+  /* Architecture diagram in case study */
+  .cs-diagram {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .cs-diagram-label {
+    font-family: 'Caveat', cursive;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 0.8rem;
+  }
+
+  /* Challenges list */
+  .cs-challenges {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .cs-challenge {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+  .cs-challenge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-top: 0.45rem;
+    flex-shrink: 0;
+  }
+  .cs-challenge-text { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .cs-challenge-text strong { color: var(--text); font-weight: 500; }
+
+  /* Outcomes */
+  .cs-outcomes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  .cs-outcome {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  .cs-outcome-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--green-light);
+    margin-bottom: 0.2rem;
+  }
+  .cs-outcome-label { font-size: 0.75rem; color: var(--muted); }
+
+  /* CS Sidebar */
+  .cs-sidebar {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .cs-sidebar-block { }
+  .cs-sidebar-title {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--pink);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+  .cs-stack-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .cs-stack-item:last-child { border-bottom: none; }
+  .cs-stack-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+  .cs-stack-name { font-size: 0.8rem; color: var(--text); }
+  .cs-stack-role { font-size: 0.7rem; color: var(--muted); margin-left: auto; }
+
+  .cs-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .cs-link {
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .cs-link-primary {
+    background: var(--green);
+    color: #fff;
+  }
+  .cs-link-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .cs-learnings {
+    background: rgba(214,77,122,0.05);
+    border: 1px solid rgba(214,77,122,0.15);
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  .cs-learnings p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* CS Footer nav */
+  .cs-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .cs-prev-next {
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  .cs-prev-next:hover { color: var(--green-light); }
+  .cs-prev-next-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* Architecture SVG in case study */
+  .arch-svg { width: 100%; height: auto; }
+
+  /* Full-width architecture */
+  .cs-arch-full {
+    padding: 2rem 2.5rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: rgba(16,26,21,0.3);
+  }
+  .cs-arch-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .cs-arch-title {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .cs-arch-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .cs-arch-sub {
+    font-family: 'Caveat', cursive;
+    font-size: 0.85rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">Portfolio Mockup — Mobile View & Case Study Page</h1>
+
+<div class="layout">
+
+  <!-- ══════════════════════════
+       LEFT: MOBILE VIEW
+  ══════════════════════════ -->
+  <div>
+    <div class="col-label">📱 Mobile view</div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+
+        <!-- Mobile Nav -->
+        <div class="m-nav">
+          <div class="m-nav-logo">mb.</div>
+          <div class="m-hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <!-- Mobile Hero -->
+        <div class="m-hero">
+          <div class="m-eyebrow">Hi, I'm</div>
+          <h1 class="m-name">Marika<br><span>Bergman</span></h1>
+          <p class="m-tagline">Backend &amp; cloud engineer specialising in <strong>AWS serverless</strong> and <strong>AI integration</strong>.</p>
+          <div class="m-badges">
+            <span class="m-badge">AWS Community Builder</span>
+            <span class="m-badge">4× AWS Certified</span>
+            <span class="m-badge">Agentic AI</span>
+          </div>
+          <div class="m-btns">
+            <div class="m-btn-primary">See my work</div>
+            <div class="m-btn-ghost">Get in touch</div>
+          </div>
+        </div>
+
+        <!-- Mobile Diagram -->
+        <div class="m-diagram">
+          <svg viewBox="0 0 340 280" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <style>
+                .me { font-family: 'Caveat', cursive; fill: #dff0eb; }
+                .mt { font-family: 'Caveat', cursive; fill: #4ecdc4; font-size: 11px; }
+                .mtp { font-family: 'Caveat', cursive; fill: #e87da0; font-size: 11px; }
+                .mtm { font-family: 'Caveat', cursive; fill: #6b9080; font-size: 11px; }
+              </style>
+              <filter id="r2">
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise" seed="5"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2"/>
+              </filter>
+            </defs>
+
+            <!-- Backend -->
+            <ellipse cx="130" cy="62" rx="90" ry="38" fill="rgba(30,110,84,0.35)" stroke="#2d9e7e" stroke-width="1.8" filter="url(#r2)"/>
+            <text x="130" y="67" text-anchor="middle" class="me" font-size="13" font-weight="600">Backend Dev</text>
+
+            <!-- Full Stack muted -->
+            <ellipse cx="248" cy="72" rx="82" ry="34" fill="rgba(22,32,25,0.4)" stroke="#2a3d32" stroke-width="1.2" filter="url(#r2)" opacity="0.7"/>
+            <text x="248" y="77" text-anchor="middle" class="me" font-size="11" fill="#3d5a48">Full-Stack</text>
+
+            <!-- NodeJS -->
+            <rect x="262" y="20" width="62" height="22" rx="3" fill="rgba(16,26,21,0.9)" stroke="#1e3028" stroke-width="1"/>
+            <text x="293" y="35" text-anchor="middle" class="mt">NodeJS</text>
+
+            <!-- Flutter muted -->
+            <rect x="296" y="84" width="48" height="20" rx="3" fill="rgba(16,26,21,0.6)" stroke="#1a2820" stroke-width="0.8"/>
+            <text x="320" y="98" text-anchor="middle" class="mtm">Flutter</text>
+
+            <!-- Cloud Engineering -->
+            <ellipse cx="130" cy="158" rx="105" ry="48" fill="rgba(30,110,84,0.28)" stroke="#2d9e7e" stroke-width="1.8" filter="url(#r2)"/>
+            <text x="130" y="163" text-anchor="middle" class="me" font-size="14" font-weight="600">Cloud Engineering</text>
+
+            <!-- AWS tags left -->
+            <rect x="6" y="120" width="82" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#1e3028" stroke-width="1"/>
+            <text x="47" y="134" text-anchor="middle" class="mt">AWS Serverless</text>
+            <rect x="6" y="146" width="68" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#1e3028" stroke-width="1"/>
+            <text x="40" y="160" text-anchor="middle" class="mt">API Gateway</text>
+            <rect x="6" y="172" width="52" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#1e3028" stroke-width="1"/>
+            <text x="32" y="186" text-anchor="middle" class="mt">Lambda</text>
+            <rect x="6" y="198" width="65" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#1e3028" stroke-width="1"/>
+            <text x="38" y="212" text-anchor="middle" class="mt">DynamoDB</text>
+
+            <!-- IaC -->
+            <ellipse cx="238" cy="148" rx="62" ry="30" fill="rgba(20,40,30,0.6)" stroke="#2d9e7e" stroke-width="1.3" filter="url(#r2)"/>
+            <text x="238" y="145" text-anchor="middle" class="me" font-size="10">Infrastructure</text>
+            <text x="238" y="158" text-anchor="middle" class="me" font-size="10">as Code</text>
+
+            <!-- IaC tags -->
+            <rect x="268" y="116" width="60" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#1e3028" stroke-width="1"/>
+            <text x="298" y="130" text-anchor="middle" class="mt">Terraform</text>
+            <rect x="268" y="140" width="65" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#1e3028" stroke-width="1"/>
+            <text x="300" y="154" text-anchor="middle" class="mt">CloudForm.</text>
+            <rect x="268" y="164" width="38" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#1e3028" stroke-width="1"/>
+            <text x="287" y="178" text-anchor="middle" class="mt">CDK</text>
+
+            <!-- AI Integration -->
+            <ellipse cx="218" cy="230" rx="95" ry="40" fill="rgba(214,77,122,0.12)" stroke="#d64d7a" stroke-width="1.8" filter="url(#r2)"/>
+            <text x="218" y="235" text-anchor="middle" class="me" font-size="13" font-weight="600">AI Integration</text>
+
+            <!-- AI tags -->
+            <rect x="108" y="256" width="74" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#5a1e30" stroke-width="1"/>
+            <text x="145" y="270" text-anchor="middle" class="mtp">AWS Bedrock</text>
+            <rect x="192" y="256" width="38" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#5a1e30" stroke-width="1"/>
+            <text x="211" y="270" text-anchor="middle" class="mtp">LLM</text>
+            <rect x="240" y="256" width="68" height="20" rx="3" fill="rgba(16,26,21,0.9)" stroke="#5a1e30" stroke-width="1"/>
+            <text x="274" y="270" text-anchor="middle" class="mtp">Agentic AI</text>
+          </svg>
+        </div>
+
+        <!-- Projects -->
+        <div class="m-section">
+          <div class="m-section-label">// work</div>
+          <div class="m-section-title">Selected Projects</div>
+
+          <div class="m-project-card">
+            <div class="m-project-num">01</div>
+            <div class="m-project-title">AI Gardening Assistant</div>
+            <p class="m-project-desc">Agentic AI system on AWS Strands SDK with real-time weather and personalised plant care recommendations.</p>
+            <div class="m-tags">
+              <span class="m-tag">Strands</span>
+              <span class="m-tag">Bedrock</span>
+              <span class="m-tag">Lambda</span>
+              <span class="m-tag m-tag-pink">Agentic AI</span>
+            </div>
+            <div class="m-project-link">View case study →</div>
+          </div>
+
+          <div class="m-project-card">
+            <div class="m-project-num">02</div>
+            <div class="m-project-title">Tilawa — Quran Study Companion</div>
+            <p class="m-project-desc">Full-stack AI app with personalised study summaries and vocabulary flashcards.</p>
+            <div class="m-tags">
+              <span class="m-tag">Bedrock</span>
+              <span class="m-tag">Flutter</span>
+              <span class="m-tag m-tag-pink">Nova Lite</span>
+            </div>
+            <div class="m-project-link">View case study →</div>
+          </div>
+
+          <div class="m-project-card">
+            <div class="m-project-num">03</div>
+            <div class="m-project-title">Oak Bedrock Content Gen</div>
+            <p class="m-project-desc">Multi-model pipeline generating maths quiz questions and images from educational PDFs.</p>
+            <div class="m-tags">
+              <span class="m-tag">Nova Lite</span>
+              <span class="m-tag">Nova Canvas</span>
+              <span class="m-tag m-tag-pink">Multi-model</span>
+            </div>
+            <div class="m-project-link">View case study →</div>
+          </div>
+        </div>
+
+        <!-- Certs -->
+        <div class="m-section">
+          <div class="m-section-label">// credentials</div>
+          <div class="m-section-title">Certifications</div>
+          <div class="m-cert community">
+            <div class="m-cert-icon pink">✦</div>
+            <div>
+              <div class="m-cert-name">AWS Community Builder — Serverless</div>
+              <div class="m-cert-meta">Technical writing & community contribution</div>
+            </div>
+          </div>
+          <div class="m-cert special">
+            <div class="m-cert-icon">⬡</div>
+            <div>
+              <div class="m-cert-name">AWS Agentic AI Demonstrated</div>
+              <div class="m-cert-meta">Microcredential · Amazon Web Services</div>
+            </div>
+          </div>
+          <div class="m-cert special">
+            <div class="m-cert-icon">⬡</div>
+            <div>
+              <div class="m-cert-name">AWS Certified AI Practitioner</div>
+              <div class="m-cert-meta">Amazon Web Services</div>
+            </div>
+          </div>
+          <div class="m-cert">
+            <div class="m-cert-icon">⬡</div>
+            <div>
+              <div class="m-cert-name">AWS Solutions Architect — Associate</div>
+              <div class="m-cert-meta">Amazon Web Services</div>
+            </div>
+          </div>
+          <div class="m-cert">
+            <div class="m-cert-icon">⬡</div>
+            <div>
+              <div class="m-cert-name">AWS Cloud Practitioner</div>
+              <div class="m-cert-meta">Amazon Web Services</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="m-section">
+          <div class="m-section-label">// background</div>
+          <div class="m-section-title">Education</div>
+          <div class="m-edu">
+            <div class="m-edu-degree">MSc Economics & Business Administration</div>
+            <div class="m-edu-school">University of Eastern Finland</div>
+          </div>
+          <div class="m-edu">
+            <div class="m-edu-degree">Web Developer Study Module</div>
+            <div class="m-edu-school">JAMK University of Applied Sciences</div>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="m-contact">
+          <div class="m-contact-label">// contact</div>
+          <div class="m-contact-title">Let's build something.</div>
+          <p class="m-contact-sub">Available for freelance projects in AWS serverless & AI integration.</p>
+          <a class="m-contact-email">contact@marikabergman.com</a>
+          <div class="m-social">
+            <span class="m-social-link">LinkedIn ↗</span>
+            <span class="m-social-link">GitHub ↗</span>
+            <span class="m-social-link">Blog ↗</span>
+          </div>
+        </div>
+
+        <div class="m-footer">Marika Bergman · © 2026 · 17,432 visitors</div>
+
+      </div><!-- /phone-screen -->
+    </div><!-- /phone-frame -->
+  </div>
+
+  <!-- ══════════════════════════
+       RIGHT: CASE STUDY PAGE
+  ══════════════════════════ -->
+  <div>
+    <div class="col-label">🖥️ Case study page — Tilawa</div>
+    <div class="casestudy-frame">
+
+      <!-- CS Nav -->
+      <div class="cs-nav">
+        <div class="cs-nav-logo">mb.</div>
+        <div class="cs-back">← Back to projects</div>
+      </div>
+
+      <!-- CS Hero -->
+      <div class="cs-hero">
+        <div class="cs-number">02</div>
+        <div class="cs-label">// case study</div>
+        <h1 class="cs-title">Tilawa — Quran Study Companion</h1>
+        <div class="cs-meta">
+          <div class="cs-meta-item">
+            <div class="cs-meta-key">Type</div>
+            <div class="cs-meta-val">Hackathon Project</div>
+          </div>
+          <div class="cs-meta-item">
+            <div class="cs-meta-key">Role</div>
+            <div class="cs-meta-val">Solo — Full Stack</div>
+          </div>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-tag">AWS Bedrock</span>
+          <span class="cs-tag">Nova Lite</span>
+          <span class="cs-tag">Lambda</span>
+          <span class="cs-tag">DynamoDB</span>
+          <span class="cs-tag">CloudFormation</span>
+          <span class="cs-tag">Flutter</span>
+          <span class="cs-tag cs-tag-pink">AI Personalisation</span>
+          <span class="cs-tag cs-tag-pink">OAuth2 PKCE</span>
+        </div>
+      </div>
+
+      <!-- CS Body -->
+      <div class="cs-body">
+
+        <!-- Main content -->
+        <div class="cs-main">
+
+          <div class="cs-section">
+            <div class="cs-section-title">The problem</div>
+            <p class="cs-text">Muslims reciting the Quran often have limited context about what they're about to read — especially those still developing their Arabic. Generic apps provide translations but nothing personalised to the reader's proficiency level or reading history. The result is a passive experience rather than an engaged one.</p>
+          </div>
+
+          <div class="cs-section">
+            <div class="cs-section-title">The approach</div>
+            <p class="cs-text">Tilawa generates a personalised AI briefing <strong>before</strong> each recitation session. Based on the user's Arabic level and their DynamoDB-stored reading history, Nova Lite produces a contextual summary of the upcoming passage and a set of vocabulary flashcards — filtered to words the user hasn't encountered before.</p>
+          </div>
+
+          <div class="cs-section">
+            <div class="cs-section-title">Key technical decisions</div>
+            <ul class="cs-challenges">
+              <li class="cs-challenge">
+                <div class="cs-challenge-dot"></div>
+                <div class="cs-challenge-text"><strong>Cross-account STS for Bedrock</strong> — rather than direct IAM access, the Lambda assumes a role in a separate AWS account to call Bedrock. An enterprise-grade security pattern that keeps AI costs isolated and auditable.</div>
+              </li>
+              <li class="cs-challenge">
+                <div class="cs-challenge-dot"></div>
+                <div class="cs-challenge-text"><strong>Two-pass keyword filtering</strong> — vocabulary is filtered first by Arabic frequency level, then against the user's DynamoDB history. This produces genuinely novel flashcards per session rather than generic wordlists.</div>
+              </li>
+              <li class="cs-challenge">
+                <div class="cs-challenge-dot"></div>
+                <div class="cs-challenge-text"><strong>Single-table DynamoDB design</strong> — user sessions, reading history, and vocabulary data colocated in one table with PK/SK patterns. Requires upfront data modelling discipline but scales cleanly.</div>
+              </li>
+              <li class="cs-challenge">
+                <div class="cs-challenge-dot"></div>
+                <div class="cs-challenge-text"><strong>Property-based testing on both sides</strong> — fast-check (Node.js) and glados (Flutter) generate edge-case inputs automatically. Uncommon in hackathon projects; included because correctness of the filtering pipeline matters.</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cs-section">
+            <div class="cs-section-title">Outcomes</div>
+            <div class="cs-outcomes">
+              <div class="cs-outcome">
+                <div class="cs-outcome-val">48h</div>
+                <div class="cs-outcome-label">Built and deployed in a single hackathon weekend</div>
+              </div>
+              <div class="cs-outcome">
+                <div class="cs-outcome-val">Live</div>
+                <div class="cs-outcome-label">Fully deployed on AWS with CloudFront + S3 frontend</div>
+              </div>
+              <div class="cs-outcome">
+                <div class="cs-outcome-val">2×</div>
+                <div class="cs-outcome-label">Test suites — property-based on backend and Flutter</div>
+              </div>
+              <div class="cs-outcome">
+                <div class="cs-outcome-val">IaC</div>
+                <div class="cs-outcome-label">CloudFormation template covering full infrastructure</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="cs-sidebar">
+
+          <div class="cs-sidebar-block">
+            <div class="cs-sidebar-title">// tech stack</div>
+            <div class="cs-stack-item">
+              <div class="cs-stack-dot"></div>
+              <div class="cs-stack-name">AWS Lambda</div>
+              <div class="cs-stack-role">Backend</div>
+            </div>
+            <div class="cs-stack-item">
+              <div class="cs-stack-dot"></div>
+              <div class="cs-stack-name">Amazon Bedrock</div>
+              <div class="cs-stack-role">AI</div>
+            </div>
+            <div class="cs-stack-item">
+              <div class="cs-stack-dot"></div>
+              <div class="cs-stack-name">Nova Lite</div>
+              <div class="cs-stack-role">LLM</div>
+            </div>
+            <div class="cs-stack-item">
+              <div class="cs-stack-dot"></div>
+              <div class="cs-stack-name">DynamoDB</div>
+              <div class="cs-stack-role">Database</div>
+            </div>
+            <div class="cs-stack-item">
+              <div class="cs-stack-dot"></div>
+              <div class="cs-stack-name">Flutter Web</div>
+              <div class="cs-stack-role">Frontend</div>
+            </div>
+            <div class="cs-stack-item">
+              <div class="cs-stack-dot"></div>
+              <div class="cs-stack-name">CloudFormation</div>
+              <div class="cs-stack-role">IaC</div>
+            </div>
+            <div class="cs-stack-item">
+              <div class="cs-stack-dot"></div>
+              <div class="cs-stack-name">Node.js 22</div>
+              <div class="cs-stack-role">Runtime</div>
+            </div>
+          </div>
+
+          <div class="cs-sidebar-block">
+            <div class="cs-sidebar-title">// links</div>
+            <div class="cs-links">
+              <a class="cs-link cs-link-primary">View on GitHub ↗</a>
+              <a class="cs-link cs-link-ghost">Live demo ↗</a>
+              <a class="cs-link cs-link-ghost">Blog post ↗</a>
+            </div>
+          </div>
+
+          <div class="cs-sidebar-block">
+            <div class="cs-sidebar-title">// reflection</div>
+            <div class="cs-learnings">
+              <p>"The cross-account STS pattern was the most interesting infrastructure decision — it adds complexity but gives you clean separation of AI spend and a clear security boundary. Worth the setup cost."</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Full-width architecture diagram -->
+      <div class="cs-arch-full">
+        <div class="cs-arch-header">
+          <span class="cs-arch-title">System Architecture</span>
+          <span class="cs-arch-line"></span>
+          <span class="cs-arch-sub">CloudFormation deployed</span>
+        </div>
+        <div class="cs-diagram">
+          <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <defs>
+              <style>
+                .at2 { font-family: 'Caveat', cursive; fill: #dff0eb; font-size: 14px; }
+                .as2 { font-family: 'Caveat', cursive; fill: #6b9080; font-size: 11px; }
+              </style>
+              <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#2d9e7e" opacity="0.7"/>
+              </marker>
+              <marker id="arr2p" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#d64d7a" opacity="0.7"/>
+              </marker>
+            </defs>
+
+            <!-- Flutter -->
+            <rect x="20" y="70" width="100" height="70" rx="8" fill="rgba(16,26,21,0.95)" stroke="#2d9e7e" stroke-width="1.8"/>
+            <text x="70" y="98" text-anchor="middle" class="at2" font-weight="700">Flutter</text>
+            <text x="70" y="115" text-anchor="middle" class="as2">Web App</text>
+            <text x="70" y="130" text-anchor="middle" class="as2">OAuth2 PKCE</text>
+
+            <!-- Arrow 1 -->
+            <line x1="120" y1="105" x2="148" y2="105" stroke="#2d9e7e" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr2)" opacity="0.7"/>
+
+            <!-- API Gateway -->
+            <rect x="150" y="70" width="110" height="70" rx="8" fill="rgba(16,26,21,0.95)" stroke="#2d9e7e" stroke-width="1.8"/>
+            <text x="205" y="98" text-anchor="middle" class="at2" font-weight="700">API Gateway</text>
+            <text x="205" y="115" text-anchor="middle" class="as2">JWT Auth</text>
+            <text x="205" y="130" text-anchor="middle" class="as2">Proxy integration</text>
+
+            <!-- Arrow 2 -->
+            <line x1="260" y1="105" x2="288" y2="105" stroke="#2d9e7e" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr2)" opacity="0.7"/>
+
+            <!-- Lambda -->
+            <rect x="290" y="70" width="110" height="70" rx="8" fill="rgba(16,26,21,0.95)" stroke="#2d9e7e" stroke-width="1.8"/>
+            <text x="345" y="98" text-anchor="middle" class="at2" font-weight="700">Lambda</text>
+            <text x="345" y="115" text-anchor="middle" class="as2">Node.js 22</text>
+            <text x="345" y="130" text-anchor="middle" class="as2">ES Modules</text>
+
+            <!-- Arrow to Bedrock -->
+            <line x1="400" y1="88" x2="428" y2="55" stroke="#d64d7a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr2p)" opacity="0.6"/>
+            <!-- Arrow to DynamoDB -->
+            <line x1="400" y1="122" x2="428" y2="155" stroke="#2d9e7e" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr2)" opacity="0.6"/>
+
+            <!-- Bedrock -->
+            <rect x="430" y="10" width="120" height="72" rx="8" fill="rgba(16,26,21,0.95)" stroke="#d64d7a" stroke-width="1.8"/>
+            <text x="490" y="38" text-anchor="middle" class="at2" font-weight="700" fill="#e87da0">Bedrock</text>
+            <text x="490" y="55" text-anchor="middle" class="as2">Nova Lite</text>
+            <text x="490" y="70" text-anchor="middle" class="as2">Cross-account STS</text>
+
+            <!-- DynamoDB -->
+            <rect x="430" y="128" width="120" height="62" rx="8" fill="rgba(16,26,21,0.95)" stroke="#2d9e7e" stroke-width="1.8"/>
+            <text x="490" y="153" text-anchor="middle" class="at2" font-weight="700">DynamoDB</text>
+            <text x="490" y="170" text-anchor="middle" class="as2">Single-table design</text>
+            <text x="490" y="184" text-anchor="middle" class="as2">User history + vocab</text>
+
+            <!-- Arrow to Quran API -->
+            <line x1="550" y1="105" x2="578" y2="105" stroke="#1e3028" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.5" marker-end="url(#arr2)"/>
+
+            <!-- Quran API -->
+            <rect x="580" y="60" width="105" height="90" rx="8" fill="rgba(16,26,21,0.95)" stroke="#1e3028" stroke-width="1.4"/>
+            <text x="632" y="95" text-anchor="middle" class="at2" font-weight="700">Quran</text>
+            <text x="632" y="112" text-anchor="middle" class="at2" font-weight="700">Foundation</text>
+            <text x="632" y="130" text-anchor="middle" class="as2">Content API</text>
+            <text x="632" y="144" text-anchor="middle" class="as2">User API</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Footer nav between case studies -->
+      <div class="cs-footer-nav">
+        <div class="cs-prev-next">
+          <span>←</span>
+          <div>
+            <div style="font-size:0.68rem;color:var(--muted);margin-bottom:0.1rem;">Previous</div>
+            <div class="cs-prev-next-title">AI Gardening Assistant</div>
+          </div>
+        </div>
+        <div class="cs-prev-next" style="text-align:right;">
+          <div>
+            <div style="font-size:0.68rem;color:var(--muted);margin-bottom:0.1rem;">Next</div>
+            <div class="cs-prev-next-title">Oak Bedrock Content Gen</div>
+          </div>
+          <span>→</span>
+        </div>
+      </div>
+
+    </div><!-- /casestudy-frame -->
+  </div>
+
+</div><!-- /layout -->
+
+</body>
+</html>

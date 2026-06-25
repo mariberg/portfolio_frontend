@@ -1,0 +1,205 @@
+.cs-main {
+  padding: 2.5rem;
+  border-right: 1px solid var(--border);
+}
+
+.cs-section {
+  margin-bottom: 2.5rem;
+}
+
+.cs-section:last-child {
+  margin-bottom: 0;
+}
+
+.cs-section-title {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--green);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cs-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.cs-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.cs-text strong {
+  color: var(--mint);
+  font-weight: 500;
+}
+
+.cs-challenges {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cs-challenge {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.cs-challenge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+}
+
+.cs-challenge-text {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cs-challenge-text strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cs-outcomes {
+  display: none;
+}
+
+.cs-screenshots {
+  margin-top: 0.5rem;
+}
+
+/* Desktop screenshots: stacked vertically, constrained width */
+.cs-screenshots-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cs-screenshots-desktop .cs-screenshot-figure {
+  width: 100%;
+  max-width: 560px;
+}
+
+.cs-screenshots-desktop .cs-screenshot {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* Mobile screenshots: side by side, capped height */
+.cs-screenshots-mobile {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.cs-screenshots-mobile .cs-screenshot {
+  max-height: 500px;
+  width: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.cs-screenshot-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+.cs-screenshot {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.cs-screenshot-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.cs-screenshot-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.cs-screenshot-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.4;
+  max-width: 220px;
+}
+
+/* Mobile architecture diagram — hidden on desktop */
+.cs-arch-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cs-main {
+    padding: 0;
+    border-right: none;
+  }
+
+  .cs-section {
+    padding: 1.2rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cs-arch-mobile {
+    display: block;
+  }
+
+  .cs-screenshots-mobile {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 0 1.2rem 1rem;
+    justify-content: flex-start;
+  }
+
+  .cs-screenshots-mobile .cs-screenshot-figure {
+    flex: 0 0 60%;
+    scroll-snap-align: center;
+  }
+
+  .cs-screenshots-mobile .cs-screenshot {
+    max-height: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .cs-screenshots-desktop {
+    padding: 0;
+  }
+
+  .cs-screenshots-desktop .cs-screenshot {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cs-screenshot-desc {
+    max-width: 200px;
+  }
+}

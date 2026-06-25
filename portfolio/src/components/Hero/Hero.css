@@ -1,0 +1,165 @@
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 7rem 4rem 4rem;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(45, 158, 126, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: 200px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(214, 77, 122, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-right: 3rem;
+}
+
+.hero-eyebrow {
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  color: var(--green);
+  letter-spacing: 0.05em;
+}
+
+.hero-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: normal;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.hero-name span {
+  color: var(--green-light);
+}
+
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 420px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.hero-tagline strong {
+  color: var(--mint);
+  font-weight: 500;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 2px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.badge-green {
+  border-color: var(--green-dark);
+  color: var(--green-light);
+  background: rgba(45, 158, 126, 0.08);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--pink-light);
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--pink);
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.diagram-wrap {
+  width: 100%;
+  max-width: 700px;
+  opacity: 0.92;
+}
+
+.diagram-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .hero-left {
+    padding-right: 0;
+  }
+
+  .hero-right {
+    margin-top: 2rem;
+  }
+
+  .diagram-wrap {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}

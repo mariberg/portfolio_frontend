@@ -1,0 +1,37 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.visitor-counter {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.footer-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.footer-challenge {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.6rem 0 0;
+  line-height: 1.5;
+}
+
+.footer-challenge a {
+  color: var(--green-light);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-challenge a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}

@@ -1,0 +1,53 @@
+.cs-arch-full {
+  padding: 2rem 2.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(16, 26, 21, 0.3);
+}
+
+.cs-arch-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.cs-arch-title {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.cs-arch-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.cs-arch-sub {
+  font-family: 'Caveat', cursive;
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.cs-arch-diagram svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Desktop: show full-width diagram */
+.cs-arch-desktop {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .cs-arch-full {
+    padding: 1.2rem;
+  }
+
+  .cs-arch-desktop {
+    display: none;
+  }
+}

@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marika Bergman — Portfolio Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #090f0d;
+    --surface:   #101a15;
+    --surface2:  #162019;
+    --green-dark: #1e6e54;
+    --green:      #2d9e7e;
+    --green-light:#4ecdc4;
+    --mint:       #a8e6da;
+    --pink:       #d64d7a;
+    --pink-light: #e87da0;
+    --text:       #dff0eb;
+    --muted:      #6b9080;
+    --border:     #1e3028;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(9,15,13,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    color: var(--green-light);
+    letter-spacing: 0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green-light); }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--pink);
+    color: var(--pink-light);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 7rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(45,158,126,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; right: 200px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(214,77,122,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-right: 3rem;
+  }
+  .hero-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: var(--green);
+    letter-spacing: 0.05em;
+  }
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .hero-name span {
+    color: var(--green-light);
+  }
+  .hero-tagline {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 420px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .hero-tagline strong {
+    color: var(--mint);
+    font-weight: 500;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--green);
+    color: #fff;
+    padding: 0.75rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--pink-light);
+    padding: 0.75rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    border: 1px solid var(--pink);
+  }
+  .hero-badges {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .badge-green {
+    border-color: var(--green-dark);
+    color: var(--green-light);
+    background: rgba(45,158,126,0.08);
+  }
+
+  /* EXCALIDRAW DIAGRAM */
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .diagram-wrap {
+    width: 100%;
+    max-width: 520px;
+    opacity: 0.92;
+  }
+
+  /* SECTION SHARED */
+  section {
+    padding: 5rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--pink);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.01em;
+  }
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 0 4rem;
+    width: calc(100% - 8rem);
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--green);
+  }
+  .project-card:nth-child(2)::before { background: var(--green-light); }
+  .project-card:nth-child(3)::before { background: var(--pink); }
+  .project-card:hover {
+    border-color: var(--green-dark);
+    transform: translateY(-3px);
+  }
+  .project-number {
+    font-family: 'Caveat', cursive;
+    font-size: 2.5rem;
+    color: var(--border);
+    line-height: 1;
+    font-weight: 700;
+  }
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .project-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    background: rgba(45,158,126,0.1);
+    border: 1px solid rgba(45,158,126,0.2);
+    color: var(--green-light);
+  }
+  .tag-pink {
+    background: rgba(214,77,122,0.08);
+    border-color: rgba(214,77,122,0.2);
+    color: var(--pink-light);
+  }
+  .project-link {
+    font-size: 0.8rem;
+    color: var(--green);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 500;
+  }
+
+  /* CERTS */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .cert-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(45,158,126,0.15);
+    border: 1px solid var(--green-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+  .cert-icon.pink {
+    background: rgba(214,77,122,0.1);
+    border-color: var(--pink);
+  }
+  .cert-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+  .cert-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .cert-special {
+    border-color: var(--green-dark);
+    background: rgba(45,158,126,0.05);
+  }
+
+  /* EDUCATION */
+  .edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .edu-item {
+    padding: 1.4rem 1.8rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+  .edu-school {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .edu-year {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--green);
+  }
+
+  /* CONTACT */
+  .contact-section {
+    text-align: center;
+    padding: 5rem 4rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+  .contact-section .section-label { display: block; margin-bottom: 0.5rem; }
+  .contact-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .contact-sub {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  .contact-email {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    color: var(--green-light);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .social-link {
+    padding: 0.6rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    background: var(--surface2);
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+  }
+
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+  }
+
+  /* COMMUNITY BUILDER HIGHLIGHT */
+  .cert-community {
+    grid-column: 1 / -1;
+    border-color: var(--pink);
+    background: rgba(214,77,122,0.04);
+  }
+  .cert-community .cert-icon { background: rgba(214,77,122,0.1); border-color: var(--pink); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">mb.</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certs">Credentials</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#">Blog ↗</a></li>
+  </ul>
+  <button class="nav-cta">Hire me</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Hi, I'm</div>
+    <h1 class="hero-name">Marika<br><span>Bergman</span></h1>
+    <p class="hero-tagline">
+      Backend &amp; cloud engineer focused on <strong>AWS serverless architecture</strong> and <strong>practical AI integrations</strong>. I build full-stack applications when needed, but my passion lies in backend systems and the infrastructure that powers them.
+    </p>
+    <div class="hero-badges">
+      <span class="badge badge-green">AWS Community Builder</span>
+      <span class="badge badge-green">4× AWS Certified</span>
+      <span class="badge">Serverless</span>
+      <span class="badge">Agentic AI</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">See my work</a>
+      <a href="#contact" class="btn-ghost">Get in touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="diagram-wrap">
+      <!-- Excalidraw-style SVG diagram -->
+      <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <defs>
+          <style>
+            .exc-text { font-family: 'Caveat', cursive; fill: #dff0eb; }
+            .exc-tag-text { font-family: 'Caveat', cursive; fill: #a8e6da; font-size: 13px; }
+            .exc-tag-text-pink { font-family: 'Caveat', cursive; fill: #e87da0; font-size: 13px; }
+            .exc-tag-text-muted { font-family: 'Caveat', cursive; fill: #6b9080; font-size: 13px; }
+          </style>
+          <filter id="roughen">
+            <feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="2" result="noise" seed="3"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+
+        <!-- Backend Development bubble (top left, dark teal) -->
+        <ellipse cx="195" cy="95" rx="120" ry="55" fill="rgba(30,110,84,0.35)" stroke="#2d9e7e" stroke-width="2" filter="url(#roughen)" opacity="0.9"/>
+        <text x="195" y="100" text-anchor="middle" class="exc-text" font-size="17" font-weight="600">Backend Development</text>
+
+        <!-- Full-Stack bubble (top right, muted/grey-green) -->
+        <ellipse cx="360" cy="110" rx="115" ry="50" fill="rgba(22,32,25,0.5)" stroke="#3a5a4a" stroke-width="1.5" filter="url(#roughen)" opacity="0.7"/>
+        <text x="360" y="115" text-anchor="middle" class="exc-text" font-size="15" fill="#4a7060">Full-Stack Development</text>
+
+        <!-- NodeJS tag -->
+        <rect x="392" y="35" width="72" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="428" y="52" text-anchor="middle" class="exc-tag-text">NodeJS</text>
+
+        <!-- Flutter tag (muted) -->
+        <rect x="418" y="130" width="60" height="26" rx="4" fill="rgba(16,26,21,0.6)" stroke="#1e2820" stroke-width="1"/>
+        <text x="448" y="147" text-anchor="middle" class="exc-tag-text-muted">Flutter</text>
+
+        <!-- ReactJS tag (muted) -->
+        <rect x="418" y="162" width="62" height="26" rx="4" fill="rgba(16,26,21,0.6)" stroke="#1e2820" stroke-width="1"/>
+        <text x="449" y="179" text-anchor="middle" class="exc-tag-text-muted">ReactJS</text>
+
+        <!-- Cloud Engineering bubble (middle, medium teal) -->
+        <ellipse cx="200" cy="235" rx="140" ry="65" fill="rgba(30,110,84,0.28)" stroke="#2d9e7e" stroke-width="2" filter="url(#roughen)"/>
+        <text x="200" y="240" text-anchor="middle" class="exc-text" font-size="18" font-weight="600">Cloud Engineering</text>
+
+        <!-- AWS Serverless tag -->
+        <rect x="18" y="175" width="110" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="73" y="192" text-anchor="middle" class="exc-tag-text">AWS Serverless</text>
+
+        <!-- API Gateway tag -->
+        <rect x="18" y="208" width="97" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="66" y="225" text-anchor="middle" class="exc-tag-text">API Gateway</text>
+
+        <!-- Lambda tag -->
+        <rect x="18" y="241" width="70" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="53" y="258" text-anchor="middle" class="exc-tag-text">Lambda</text>
+
+        <!-- DynamoDB tag -->
+        <rect x="18" y="274" width="85" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="60" y="291" text-anchor="middle" class="exc-tag-text">DynamoDB</text>
+
+        <!-- IaC bubble (shared between cloud and AI) -->
+        <ellipse cx="330" cy="220" rx="80" ry="38" fill="rgba(20,40,30,0.6)" stroke="#2d9e7e" stroke-width="1.5" filter="url(#roughen)"/>
+        <text x="330" y="217" text-anchor="middle" class="exc-text" font-size="13">Infrastructure</text>
+        <text x="330" y="232" text-anchor="middle" class="exc-text" font-size="13">as Code</text>
+
+        <!-- Terraform tag -->
+        <rect x="382" y="192" width="72" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="418" y="209" text-anchor="middle" class="exc-tag-text">Terraform</text>
+
+        <!-- CloudFormation tag -->
+        <rect x="382" y="224" width="110" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="437" y="241" text-anchor="middle" class="exc-tag-text">CloudFormation</text>
+
+        <!-- CDK tag -->
+        <rect x="382" y="256" width="52" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="408" y="273" text-anchor="middle" class="exc-tag-text">CDK</text>
+
+        <!-- CI/CD bubble -->
+        <ellipse cx="248" cy="310" rx="55" ry="28" fill="rgba(20,40,30,0.6)" stroke="#2d9e7e" stroke-width="1.5" filter="url(#roughen)"/>
+        <text x="248" y="315" text-anchor="middle" class="exc-text" font-size="14">CI/CD</text>
+
+        <!-- Github Actions tag -->
+        <rect x="178" y="342" width="110" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#1e3028" stroke-width="1.2"/>
+        <text x="233" y="359" text-anchor="middle" class="exc-tag-text">Github Actions</text>
+
+        <!-- AI Integration bubble (bottom, pink accent) -->
+        <ellipse cx="320" cy="345" rx="120" ry="55" fill="rgba(214,77,122,0.12)" stroke="#d64d7a" stroke-width="2" filter="url(#roughen)"/>
+        <text x="320" y="350" text-anchor="middle" class="exc-text" font-size="17" font-weight="600">AI Integration</text>
+
+        <!-- AWS Bedrock tag -->
+        <rect x="178" y="385" width="100" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#5a1e30" stroke-width="1.2"/>
+        <text x="228" y="402" text-anchor="middle" class="exc-tag-text-pink">AWS Bedrock</text>
+
+        <!-- LLM tag -->
+        <rect x="288" y="385" width="52" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#5a1e30" stroke-width="1.2"/>
+        <text x="314" y="402" text-anchor="middle" class="exc-tag-text-pink">LLM</text>
+
+        <!-- Agentic AI tag -->
+        <rect x="352" y="385" width="85" height="26" rx="4" fill="rgba(16,26,21,0.8)" stroke="#5a1e30" stroke-width="1.2"/>
+        <text x="394" y="402" text-anchor="middle" class="exc-tag-text-pink">Agentic AI</text>
+
+        <!-- Connecting lines (hand-drawn style) -->
+        <path d="M 170 148 Q 155 190 160 172" stroke="#2d9e7e" stroke-width="1.2" fill="none" stroke-dasharray="4,3" opacity="0.5"/>
+        <path d="M 268 280 Q 268 298 255 285" stroke="#2d9e7e" stroke-width="1.2" fill="none" stroke-dasharray="4,3" opacity="0.5"/>
+        <path d="M 295 338 Q 310 318 318 295" stroke="#d64d7a" stroke-width="1.2" fill="none" stroke-dasharray="4,3" opacity="0.4"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">// work</div>
+  <h2 class="section-title">Selected Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-number">01</div>
+      <div class="project-title">AI-Powered Gardening Assistant</div>
+      <p class="project-desc">Agentic AI system built on AWS Strands SDK. Retrieves plant profiles, fetches real-time weather, and synthesises personalised care recommendations autonomously.</p>
+      <div class="project-tags">
+        <span class="tag">Strands Agents</span>
+        <span class="tag">Bedrock</span>
+        <span class="tag">Lambda</span>
+        <span class="tag">DynamoDB</span>
+        <span class="tag tag-pink">Agentic AI</span>
+      </div>
+      <a href="#" class="project-link">View case study →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-number">02</div>
+      <div class="project-title">Tilawa — Quran Study Companion</div>
+      <p class="project-desc">Full-stack AI app generating personalised study summaries and vocabulary flashcards before recitation sessions, adapting to Arabic proficiency and reading history.</p>
+      <div class="project-tags">
+        <span class="tag">Bedrock</span>
+        <span class="tag">Flutter</span>
+        <span class="tag">CloudFormation</span>
+        <span class="tag tag-pink">Nova Lite</span>
+      </div>
+      <a href="#" class="project-link">View case study →</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-number">03</div>
+      <div class="project-title">Oak Bedrock Content Gen</div>
+      <p class="project-desc">Multi-model Bedrock pipeline processing educational PDFs to generate new maths quiz questions and contextually matched images using Nova Lite and Nova Canvas.</p>
+      <div class="project-tags">
+        <span class="tag">Nova Lite</span>
+        <span class="tag">Nova Canvas</span>
+        <span class="tag">Lambda</span>
+        <span class="tag tag-pink">Multi-model</span>
+      </div>
+      <a href="#" class="project-link">View case study →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CREDENTIALS -->
+<section id="certs">
+  <div class="section-label">// credentials</div>
+  <h2 class="section-title">Certifications &amp; Recognition</h2>
+  <div class="certs-grid">
+
+    <div class="cert-item cert-community">
+      <div class="cert-icon pink">✦</div>
+      <div>
+        <div class="cert-name">AWS Community Builder — Serverless</div>
+        <div class="cert-meta">Selected for exclusive AWS program. Technical writing, community contribution &amp; global collaboration.</div>
+      </div>
+    </div>
+
+    <div class="cert-item cert-special">
+      <div class="cert-icon">⬡</div>
+      <div>
+        <div class="cert-name">AWS Agentic AI Demonstrated</div>
+        <div class="cert-meta">Microcredential · Amazon Web Services</div>
+      </div>
+    </div>
+
+    <div class="cert-item cert-special">
+      <div class="cert-icon">⬡</div>
+      <div>
+        <div class="cert-name">AWS Certified AI Practitioner</div>
+        <div class="cert-meta">Amazon Web Services</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">⬡</div>
+      <div>
+        <div class="cert-name">AWS Certified Solutions Architect — Associate</div>
+        <div class="cert-meta">Amazon Web Services</div>
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-icon">⬡</div>
+      <div>
+        <div class="cert-name">AWS Certified Cloud Practitioner</div>
+        <div class="cert-meta">Amazon Web Services</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">// background</div>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">MSc in Economics and Business Administration</div>
+        <div class="edu-school">University of Eastern Finland · Small Business Management</div>
+      </div>
+      <div class="edu-year">UEF</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">Web Developer Study Module</div>
+        <div class="edu-school">JAMK University of Applied Sciences · HTML/CSS, JS, Angular, NodeJS, SQL, NoSQL</div>
+      </div>
+      <div class="edu-year">JAMK</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <span class="section-label">// contact</span>
+  <h2 class="contact-title">Let's build something.</h2>
+  <p class="contact-sub">Available for freelance projects in AWS serverless &amp; AI integration.</p>
+  <a href="mailto:contact@marikabergman.com" class="contact-email">contact@marikabergman.com</a>
+  <div class="social-links">
+    <a href="#" class="social-link">LinkedIn ↗</a>
+    <a href="#" class="social-link">GitHub ↗</a>
+    <a href="#" class="social-link">Blog ↗</a>
+  </div>
+</div>
+
+<footer>
+  Marika Bergman · built with AWS S3 &amp; CloudFront · © 2025
+</footer>
+
+</body>
+</html>

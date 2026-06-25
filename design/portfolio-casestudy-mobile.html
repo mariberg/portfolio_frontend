@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — Mobile Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #090f0d;
+    --surface:     #101a15;
+    --surface2:    #162019;
+    --green-dark:  #1e6e54;
+    --green:       #2d9e7e;
+    --green-light: #4ecdc4;
+    --mint:        #a8e6da;
+    --pink:        #d64d7a;
+    --pink-light:  #e87da0;
+    --text:        #dff0eb;
+    --muted:       #6b9080;
+    --border:      #1e3028;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  h1.page-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .col-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--green-light);
+    text-align: center;
+  }
+
+  /* ─── PHONE FRAME ─── */
+  .phone-frame {
+    width: 390px;
+    background: #0a0a0a;
+    border-radius: 48px;
+    border: 8px solid #222;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6), inset 0 0 0 1px #333;
+    overflow: hidden;
+  }
+  .phone-notch {
+    width: 120px;
+    height: 30px;
+    background: #0a0a0a;
+    border-radius: 0 0 20px 20px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    border: 2px solid #222;
+    border-top: none;
+  }
+  .phone-screen {
+    background: var(--bg);
+    overflow-y: auto;
+    max-height: 820px;
+    scrollbar-width: none;
+  }
+  .phone-screen::-webkit-scrollbar { display: none; }
+
+  /* ─── NAV ─── */
+  .cs-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    background: rgba(9,15,13,0.95);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .cs-logo {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: var(--green-light);
+  }
+  .cs-back {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── HERO ─── */
+  .cs-hero {
+    padding: 1.5rem 1.2rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(214,77,122,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cs-number {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    color: var(--border);
+    line-height: 1;
+    position: absolute;
+    top: 1rem; right: 1.2rem;
+    font-weight: 700;
+  }
+  .cs-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 0.9rem;
+    color: var(--pink);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .cs-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.8rem;
+    max-width: 230px;
+  }
+  .cs-meta {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 0.9rem;
+  }
+  .cs-meta-key {
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.15rem;
+  }
+  .cs-meta-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .cs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .cs-tag {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+    background: rgba(45,158,126,0.1);
+    border: 1px solid rgba(45,158,126,0.2);
+    color: var(--green-light);
+  }
+  .cs-tag-pink {
+    background: rgba(214,77,122,0.08);
+    border-color: rgba(214,77,122,0.2);
+    color: var(--pink-light);
+  }
+
+  /* ─── SECTION ─── */
+  .cs-section {
+    padding: 1.2rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cs-section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--green);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cs-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .cs-text {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .cs-text strong { color: var(--mint); font-weight: 500; }
+
+  /* ─── ARCHITECTURE DIAGRAM ─── */
+  .cs-arch {
+    padding: 1.2rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(16,26,21,0.4);
+  }
+  .cs-arch-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.9rem;
+  }
+  .cs-arch-title {
+    font-family: 'Caveat', cursive;
+    font-size: 1.05rem;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .cs-arch-line { flex:1; height:1px; background: var(--border); }
+  .cs-arch-sub {
+    font-family: 'Caveat', cursive;
+    font-size: 0.75rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .cs-arch svg { width: 100%; height: auto; }
+
+  /* ─── KEY DECISIONS ─── */
+  .cs-challenges {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .cs-challenge {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+  }
+  .cs-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    margin-top: 0.45rem;
+    flex-shrink: 0;
+  }
+  .cs-challenge-text {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .cs-challenge-text strong { color: var(--text); font-weight: 500; }
+
+  /* ─── OUTCOMES ─── */
+  .cs-outcomes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .cs-outcome {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.8rem;
+  }
+  .cs-outcome-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--green-light);
+    margin-bottom: 0.15rem;
+  }
+  .cs-outcome-label { font-size: 0.68rem; color: var(--muted); line-height: 1.4; }
+
+  /* ─── SIDEBAR ITEMS (stacked on mobile) ─── */
+  .cs-sidebar-section {
+    padding: 1.2rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cs-sidebar-title {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--pink);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Tech stack — horizontal scrollable chips on mobile */
+  .cs-stack-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .cs-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.7rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.72rem;
+    color: var(--text);
+  }
+  .cs-chip-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+  .cs-chip-role {
+    font-size: 0.62rem;
+    color: var(--muted);
+    margin-left: 0.1rem;
+  }
+
+  /* Links */
+  .cs-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .cs-link {
+    display: block;
+    padding: 0.65rem 1rem;
+    border-radius: 4px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+  }
+  .cs-link-primary { background: var(--green); color: #fff; }
+  .cs-link-ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+
+  /* Reflection */
+  .cs-learnings {
+    background: rgba(214,77,122,0.05);
+    border: 1px solid rgba(214,77,122,0.15);
+    border-radius: 6px;
+    padding: 0.9rem;
+  }
+  .cs-learnings p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ─── PREV/NEXT FOOTER ─── */
+  .cs-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+  .cs-nav-item { }
+  .cs-nav-dir {
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.15rem;
+  }
+  .cs-nav-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .cs-nav-item.right { text-align: right; }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">Case Study Page — Mobile Mockup</h1>
+<div class="col-label">📱 Tilawa case study on mobile</div>
+
+<div class="phone-frame">
+  <div class="phone-notch"></div>
+  <div class="phone-screen">
+
+    <!-- Nav -->
+    <div class="cs-nav">
+      <div class="cs-logo">mb.</div>
+      <div class="cs-back">← Back to projects</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="cs-hero">
+      <div class="cs-number">02</div>
+      <div class="cs-eyebrow">// case study</div>
+      <h1 class="cs-title">Tilawa — Quran Study Companion</h1>
+      <div class="cs-meta">
+        <div>
+          <div class="cs-meta-key">Type</div>
+          <div class="cs-meta-val">Hackathon</div>
+        </div>
+        <div>
+          <div class="cs-meta-key">Role</div>
+          <div class="cs-meta-val">Solo — Full Stack</div>
+        </div>
+      </div>
+      <div class="cs-tags">
+        <span class="cs-tag">Bedrock</span>
+        <span class="cs-tag">Nova Lite</span>
+        <span class="cs-tag">Lambda</span>
+        <span class="cs-tag">DynamoDB</span>
+        <span class="cs-tag">CloudFormation</span>
+        <span class="cs-tag">Flutter</span>
+        <span class="cs-tag cs-tag-pink">AI Personalisation</span>
+        <span class="cs-tag cs-tag-pink">OAuth2 PKCE</span>
+      </div>
+    </div>
+
+    <!-- Problem -->
+    <div class="cs-section">
+      <div class="cs-section-title">The problem</div>
+      <p class="cs-text">Muslims reciting the Quran often have limited context about what they're about to read — especially those still developing their Arabic. Generic apps provide translations but nothing personalised to the reader's proficiency level or reading history.</p>
+    </div>
+
+    <!-- Approach -->
+    <div class="cs-section">
+      <div class="cs-section-title">The approach</div>
+      <p class="cs-text">Tilawa generates a personalised AI briefing <strong>before</strong> each recitation session — a contextual summary and vocabulary flashcards filtered to words the user hasn't encountered before, based on their Arabic level and DynamoDB reading history.</p>
+    </div>
+
+    <!-- Architecture diagram — full width, scaled for mobile -->
+    <div class="cs-arch">
+      <div class="cs-arch-header">
+        <span class="cs-arch-title">Architecture</span>
+        <span class="cs-arch-line"></span>
+        <span class="cs-arch-sub">CloudFormation</span>
+      </div>
+      <svg viewBox="0 0 340 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>
+            .at3 { font-family: 'Caveat', cursive; fill: #dff0eb; font-size: 12px; }
+            .as3 { font-family: 'Caveat', cursive; fill: #6b9080; font-size: 10px; }
+          </style>
+          <marker id="a3" markerWidth="7" markerHeight="7" refX="5" refY="2.5" orient="auto">
+            <path d="M0,0 L0,5 L7,2.5 z" fill="#2d9e7e" opacity="0.7"/>
+          </marker>
+          <marker id="a3p" markerWidth="7" markerHeight="7" refX="5" refY="2.5" orient="auto">
+            <path d="M0,0 L0,5 L7,2.5 z" fill="#d64d7a" opacity="0.7"/>
+          </marker>
+        </defs>
+
+        <!-- Flutter -->
+        <rect x="10" y="10" width="90" height="62" rx="6" fill="rgba(16,26,21,0.95)" stroke="#2d9e7e" stroke-width="1.6"/>
+        <text x="55" y="33" text-anchor="middle" class="at3" font-weight="700">Flutter</text>
+        <text x="55" y="48" text-anchor="middle" class="as3">Web App</text>
+        <text x="55" y="62" text-anchor="middle" class="as3">OAuth2 PKCE</text>
+
+        <!-- Arrow down -->
+        <line x1="55" y1="72" x2="55" y2="98" stroke="#2d9e7e" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#a3)" opacity="0.7"/>
+
+        <!-- API Gateway -->
+        <rect x="10" y="100" width="90" height="62" rx="6" fill="rgba(16,26,21,0.95)" stroke="#2d9e7e" stroke-width="1.6"/>
+        <text x="55" y="123" text-anchor="middle" class="at3" font-weight="700">API Gateway</text>
+        <text x="55" y="138" text-anchor="middle" class="as3">JWT Auth</text>
+        <text x="55" y="152" text-anchor="middle" class="as3">Proxy integration</text>
+
+        <!-- Arrow down -->
+        <line x1="55" y1="162" x2="55" y2="188" stroke="#2d9e7e" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#a3)" opacity="0.7"/>
+
+        <!-- Lambda -->
+        <rect x="10" y="190" width="90" height="62" rx="6" fill="rgba(16,26,21,0.95)" stroke="#2d9e7e" stroke-width="1.6"/>
+        <text x="55" y="213" text-anchor="middle" class="at3" font-weight="700">Lambda</text>
+        <text x="55" y="228" text-anchor="middle" class="as3">Node.js 22</text>
+        <text x="55" y="242" text-anchor="middle" class="as3">ES Modules</text>
+
+        <!-- Arrow right to Bedrock -->
+        <line x1="100" y1="207" x2="148" y2="165" stroke="#d64d7a" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#a3p)" opacity="0.6"/>
+        <!-- Arrow right to DynamoDB -->
+        <line x1="100" y1="230" x2="148" y2="248" stroke="#2d9e7e" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#a3)" opacity="0.6"/>
+
+        <!-- Bedrock -->
+        <rect x="150" y="115" width="110" height="65" rx="6" fill="rgba(16,26,21,0.95)" stroke="#d64d7a" stroke-width="1.6"/>
+        <text x="205" y="138" text-anchor="middle" class="at3" font-weight="700" fill="#e87da0">Bedrock</text>
+        <text x="205" y="153" text-anchor="middle" class="as3">Nova Lite</text>
+        <text x="205" y="168" text-anchor="middle" class="as3">Cross-account STS</text>
+
+        <!-- DynamoDB -->
+        <rect x="150" y="210" width="110" height="62" rx="6" fill="rgba(16,26,21,0.95)" stroke="#2d9e7e" stroke-width="1.6"/>
+        <text x="205" y="233" text-anchor="middle" class="at3" font-weight="700">DynamoDB</text>
+        <text x="205" y="248" text-anchor="middle" class="as3">Single-table</text>
+        <text x="205" y="262" text-anchor="middle" class="as3">User history</text>
+
+        <!-- Quran API -->
+        <rect x="220" y="10" width="110" height="80" rx="6" fill="rgba(16,26,21,0.95)" stroke="#1e3028" stroke-width="1.3"/>
+        <text x="275" y="38" text-anchor="middle" class="at3" font-weight="700">Quran</text>
+        <text x="275" y="53" text-anchor="middle" class="at3" font-weight="700">Foundation</text>
+        <text x="275" y="70" text-anchor="middle" class="as3">Content API</text>
+        <text x="275" y="82" text-anchor="middle" class="as3">User API</text>
+
+        <!-- Quran connector line -->
+        <line x1="275" y1="90" x2="275" y2="112" stroke="#1e3028" stroke-width="1" stroke-dasharray="3,3" opacity="0.4" marker-end="url(#a3)"/>
+        <line x1="275" y1="112" x2="260" y2="130" stroke="#1e3028" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <!-- Key decisions -->
+    <div class="cs-section">
+      <div class="cs-section-title">Key decisions</div>
+      <ul class="cs-challenges">
+        <li class="cs-challenge">
+          <div class="cs-dot"></div>
+          <div class="cs-challenge-text"><strong>Cross-account STS for Bedrock</strong> — Lambda assumes a role in a separate AWS account. Enterprise-grade security, AI costs isolated and auditable.</div>
+        </li>
+        <li class="cs-challenge">
+          <div class="cs-dot"></div>
+          <div class="cs-challenge-text"><strong>Two-pass keyword filtering</strong> — vocabulary filtered by Arabic level first, then against user history. Genuinely novel flashcards each session.</div>
+        </li>
+        <li class="cs-challenge">
+          <div class="cs-dot"></div>
+          <div class="cs-challenge-text"><strong>Single-table DynamoDB</strong> — user sessions, history, and vocab colocated with PK/SK patterns. Requires discipline upfront, scales cleanly.</div>
+        </li>
+        <li class="cs-challenge">
+          <div class="cs-dot"></div>
+          <div class="cs-challenge-text"><strong>Property-based testing both sides</strong> — fast-check (Node.js) and glados (Flutter). Uncommon in hackathon projects.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Outcomes -->
+    <div class="cs-section">
+      <div class="cs-section-title">Outcomes</div>
+      <div class="cs-outcomes">
+        <div class="cs-outcome">
+          <div class="cs-outcome-val">48h</div>
+          <div class="cs-outcome-label">Built & deployed in one hackathon weekend</div>
+        </div>
+        <div class="cs-outcome">
+          <div class="cs-outcome-val">Live</div>
+          <div class="cs-outcome-label">Deployed on AWS, CloudFront + S3</div>
+        </div>
+        <div class="cs-outcome">
+          <div class="cs-outcome-val">2×</div>
+          <div class="cs-outcome-label">Property-based test suites</div>
+        </div>
+        <div class="cs-outcome">
+          <div class="cs-outcome-val">IaC</div>
+          <div class="cs-outcome-label">Full CloudFormation coverage</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech stack -->
+    <div class="cs-sidebar-section">
+      <div class="cs-sidebar-title">// tech stack</div>
+      <div class="cs-stack-chips">
+        <div class="cs-chip"><div class="cs-chip-dot"></div>AWS Lambda <span class="cs-chip-role">Backend</span></div>
+        <div class="cs-chip"><div class="cs-chip-dot"></div>Bedrock <span class="cs-chip-role">AI</span></div>
+        <div class="cs-chip"><div class="cs-chip-dot"></div>Nova Lite <span class="cs-chip-role">LLM</span></div>
+        <div class="cs-chip"><div class="cs-chip-dot"></div>DynamoDB <span class="cs-chip-role">Database</span></div>
+        <div class="cs-chip"><div class="cs-chip-dot"></div>Flutter Web <span class="cs-chip-role">Frontend</span></div>
+        <div class="cs-chip"><div class="cs-chip-dot"></div>CloudFormation <span class="cs-chip-role">IaC</span></div>
+        <div class="cs-chip"><div class="cs-chip-dot"></div>Node.js 22 <span class="cs-chip-role">Runtime</span></div>
+      </div>
+    </div>
+
+    <!-- Links -->
+    <div class="cs-sidebar-section">
+      <div class="cs-sidebar-title">// links</div>
+      <div class="cs-links">
+        <div class="cs-link cs-link-primary">View on GitHub ↗</div>
+        <div class="cs-link cs-link-ghost">Live demo ↗</div>
+        <div class="cs-link cs-link-ghost">Blog post ↗</div>
+      </div>
+    </div>
+
+    <!-- Reflection -->
+    <div class="cs-sidebar-section">
+      <div class="cs-sidebar-title">// reflection</div>
+      <div class="cs-learnings">
+        <p>"The cross-account STS pattern was the most interesting infrastructure decision — it adds complexity but gives you clean separation of AI spend and a clear security boundary."</p>
+      </div>
+    </div>
+
+    <!-- Prev / Next -->
+    <div class="cs-footer-nav">
+      <div class="cs-nav-item">
+        <div class="cs-nav-dir">← Previous</div>
+        <div class="cs-nav-title">AI Gardening Assistant</div>
+      </div>
+      <div class="cs-nav-item right">
+        <div class="cs-nav-dir">Next →</div>
+        <div class="cs-nav-title">Client Project</div>
+      </div>
+    </div>
+
+  </div><!-- /phone-screen -->
+</div><!-- /phone-frame -->
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+.contact-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.contact-label {
+  font-family: 'Caveat', cursive;
+  color: var(--pink);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-email {
+  font-family: 'Caveat', cursive;
+  color: var(--green-light);
+  font-size: 1.75rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.contact-email:hover {
+  opacity: 0.8;
+}
+
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-social-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.contact-social-link:hover {
+  color: var(--green-light);
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .contact-heading {
+    font-size: 1.8rem;
+  }
+
+  .contact-socials {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
