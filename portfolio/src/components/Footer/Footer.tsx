@@ -28,7 +28,11 @@ function Footer() {
         <a href="https://cloudresumechallenge.dev/docs/the-challenge/aws/" target="_blank" rel="noopener noreferrer">
           AWS Cloud Resume Challenge
         </a>
-        {' '}— a serverless architecture deployed with AWS CDK and automated through GitHub Actions.
+        . Serving {visitorCount !== null ? visitorCount.toLocaleString() : '...'} requests, including a traffic spike from a feature on{' '}
+        <a href="https://www.youtube.com/c/techwithlucy" target="_blank" rel="noopener noreferrer">
+          Tech With Lucy
+        </a>
+        {' '}YouTube channel.
       </p>
     </footer>
   )
