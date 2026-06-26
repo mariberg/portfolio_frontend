@@ -21,8 +21,10 @@
 .footer-challenge {
   font-size: 0.78rem;
   color: var(--muted);
-  margin: 0.6rem 0 0;
+  margin: 0.6rem auto 0;
   line-height: 1.5;
+  max-width: 780px;
+  text-wrap: balance;
 }
 
 .footer-challenge a {
