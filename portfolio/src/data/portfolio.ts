@@ -277,14 +277,11 @@ export const education: EducationEntry[] = [
 ];
 
 export function getAdjacentProjects(currentSlug: string): {
-  prev: { slug: string; title: string };
-  next: { slug: string; title: string };
+  prev: { slug: string; title: string } | null;
+  next: { slug: string; title: string } | null;
 } {
   const idx = projects.findIndex((p) => p.slug === currentSlug);
-  const prevIdx = idx <= 0 ? projects.length - 1 : idx - 1;
-  const nextIdx = idx >= projects.length - 1 ? 0 : idx + 1;
-  return {
-    prev: { slug: projects[prevIdx].slug, title: projects[prevIdx].title },
-    next: { slug: projects[nextIdx].slug, title: projects[nextIdx].title },
-  };
+  const prev = idx <= 0 ? null : { slug: projects[idx - 1].slug, title: projects[idx - 1].title };
+  const next = idx >= projects.length - 1 ? null : { slug: projects[idx + 1].slug, title: projects[idx + 1].title };
+  return { prev, next };
 }

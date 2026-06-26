@@ -1,7 +1,7 @@
 .hero {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.3fr;
   align-items: center;
   padding: 7rem 4rem 4rem;
   position: relative;
@@ -57,7 +57,7 @@
 }
 
 .hero-tagline {
-  font-size: 1.05rem;
+  font-size: 1.175rem;
   color: var(--muted);
   max-width: 420px;
   line-height: 1.7;
@@ -135,7 +135,7 @@
 
 .diagram-wrap {
   width: 100%;
-  max-width: 700px;
+  max-width: 820px;
   opacity: 0.92;
 }
 
@@ -159,7 +159,7 @@
   }
 
   .diagram-wrap {
-    max-width: 380px;
+    max-width: 100%;
     margin: 0 auto;
   }
 }

@@ -24,13 +24,13 @@ function Footer() {
         Marika Bergman · © 2026
       </p>
       <p className="footer-challenge">
-        This site was built as part of the{' '}
+        This portfolio began as my first AWS project: the{' '}
         <a href="https://cloudresumechallenge.dev/docs/the-challenge/aws/" target="_blank" rel="noopener noreferrer">
-          AWS Cloud Resume Challenge
+          Cloud Resume Challenge
         </a>
-        . Serving {visitorCount !== null ? visitorCount.toLocaleString() : '...'} requests, including a traffic spike from a feature on{' '}
+        . The DynamoDB visitor counter I built back then is still running today and has recorded {visitorCount !== null ? visitorCount.toLocaleString() : '...'} requests, including a traffic spike after being featured on{' '}
         <a href="https://www.youtube.com/c/techwithlucy" target="_blank" rel="noopener noreferrer">
-          Tech With Lucy
+          Tech With Lucy's
         </a>
         {' '}YouTube channel.
       </p>
